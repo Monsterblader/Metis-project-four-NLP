@@ -1,3 +1,4 @@
+import os
 import re
 import time
 
@@ -66,3 +67,5 @@ def timer(f):
         print(message)
 
         return result
+
+    return funct
