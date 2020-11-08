@@ -16,8 +16,11 @@ def sanitize_posts(source):
     stemmer = WordNetLemmatizer()
 
     for sen in range(0, len(source)):
+        # Remove all of the URL's
+        document = re.sub(r'https*:\/\/[\w*\.]*[\w\-*\/]*[\.\w]*', ' ', str(source.iloc[sen]))
+
         # Remove all the special characters
-        document = re.sub(r'\W', ' ', str(source.iloc[sen]))
+        document = re.sub(r'\W', ' ', document)
 
         # remove all single characters
         document = re.sub(r'\s+[a-zA-Z]\s+', ' ', document)
