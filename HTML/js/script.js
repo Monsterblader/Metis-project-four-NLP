@@ -3,8 +3,7 @@ const checkKey = e => {
 
   if (e.keyCode == '37') {
     plusSlides(-1);
-  }
-  else if (e.keyCode == '39') {
+  } else if (e.keyCode == '39') {
     plusSlides(1);
   }
 }
