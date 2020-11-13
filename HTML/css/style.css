@@ -20,7 +20,7 @@ iframe {
   border-radius: 10px;
   display: block;
   margin: auto;
-  height: 900px;
+  height: 800px;
   width: 1000px;
 }
 
@@ -57,7 +57,32 @@ iframe {
 .opener .row.top {
   background-color: #9fa1a3;
   border-radius: 10px;
+  margin: -28px auto 0px;
   text-align: center;
+  width: 1200px;
+}
+
+.opener .WSJ {
+  color: #eee;
+  font-family: 'Oranienbaum', serif;
+}
+
+.opener .vs {
+  font-size: 60px;
+}
+
+.opener h3 {
+  margin: auto;
+  width: 1000px;
+}
+
+.opener img {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  z-index: -10;
 }
 
 .sources img {
@@ -74,18 +99,66 @@ iframe {
   text-align: center;
 }
 
-.LSA {
+.LSA-NMF {
   font-size: 24px;
 }
 
-.LSA caption {
-  font-size: 36px;
+.LSA-NMF table {
+  margin: auto;
 }
 
+.LSA-NMF td {
+  /* background-color: #9fa1a3; */
+  border-radius: 3px;
+  padding: 0px 5px;
+}
+
+.LSA-NMF caption {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.pyLDAvis .row.top div {
+  margin-top: -50px;
+  padding-bottom: 25px;
+  text-align: center;
+}
 .pyLDAvis iframe {
-  height: 900px;
+  height: 800px;
   width: 1300px;
   background: white;
+}
+
+.corex {
+  font-size: 24px;
+}
+
+.corex table {
+  margin: auto;
+}
+
+.corex td {
+  /* background-color: #9fa1a3; */
+  border-radius: 3px;
+  padding: 0px 5px;
+}
+
+.corex caption {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.corex i {
+  color: gold;
+}
+
+.todo img {
+  width: 100%;
+}
+
+.todo .right {
+  transform: translate(100px, 0);
+  vertical-align: top;
 }
 
 /* slideshow begin */
