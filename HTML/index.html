@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Natural Language Processing - Topic Modeling</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.css">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div class="body-background"></div>
+
+  <div class="content-container">
+    <!-- slideshow begin-->
+    <div class="slideshow-container">
+
+      <!-- 
+        I've heard that Wall Street is paying attention to Wall Street Bets as a source of clues for what might move the markets.  I decided to 
+        Show Reddit/sub-Reddits
+        Show various tools and preliminary results
+        show corex
+        show corex with anchors
+        show topics from anchors
+        show topics without anchors
+        compare noo anchors with anchors
+        Show kmeans?
+        show pca?
+        show 2d charts?
+        show corex output charts
+      -->
+      <!-- Full-width images with number and caption text -->
+
+      <div class="mySlides fade">
+        <div class="page opener">
+          <div class="row top">
+            <h1><span class="WSJ">Wall Street</span> <span class="vs">vs.</span> Wall Street Bets</h1>
+            <h3>What Reddit has to say about investing and financial instruments.</h3>
+          </div>
+          <div class="row bottom">
+            <img src="http://i.huffpost.com/gen/852007/images/o-WALL-STREET-facebook.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="page sources">
+          <div class="header">
+            <img src="images/kaggle.png" alt="Header of Wall-Street-Bets dataset from Kaggle" />
+          </div>
+          <div class="row top">
+            <div class="column left">
+              <img src="images/wallstreetbets.png" alt="The Wall-Street-Bets sub-reddit" />
+              <span>1.6M Degenerates<br />
+              454,025 documents</span>
+            </div>
+            <div class="column right">
+              <img src="images/investing.png" alt="The Investing sub-reddit" />
+              <span>1.2M Members<br />
+              210,151 documents</span>
+            </div>
+          </div>
+          <div class="row bottom">
+            <div class="column left">
+              <img src="images/options.png" alt="The Options sub-reddit" />
+              <span>357k Members<br />
+              42,385 documents</span>
+            </div>
+            <div class="column right">
+              <img src="images/securityanalysis.png" alt="The Security-Analysis sub-reddit" />
+              <span>100k Security Analysts<br />
+              22,939 documents</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     <div class="mySlides fade">
+        <div class="page LSA-NMF" onclick="matchTopics('.LSA-NMF')"">
+          <div class="column left">
+            <table>
+              <caption>LSA topics</caption>
+              <tbody>
+                <tr class="match ">
+                  <td class="match one">gt</td><td class="match two">earnings</td><td>stock</td><td>ha</td><td>market</td><td>company</td>
+                </tr>
+                <tr class="match two">
+                  <td class="">******</td><td>america</td><td>nt</td><td>trade</td><td>post</td><td>make</td>
+                </tr>
+                <tr class="match three">
+                  <td class="match one">gt</td><td class="match two">earnings</td><td>click</td><td>release</td><td>estimate</td><td>chart</td>
+                </tr>
+                <tr class="match ">
+                  <td>company</td><td>usd</td><td>ha</td><td>bln</td><td>rev</td><td>eps</td>
+                </tr>
+                <tr class="match ">
+                  <td>option</td><td>call</td><td>usd</td><td>rev</td><td>price</td><td>trade</td>
+                </tr>
+                <tr>
+                  <td>stock</td><td>click</td><td>share</td><td>usd</td><td class="match one">gt</td><td>company</td>
+                </tr>
+                <tr class="match four">
+                  <td>usd</td><td>exp</td><td>bln</td><td class="match one">gt</td><td>nt</td><td>vs</td>
+                </tr>
+                <tr>
+                  <td>rev</td><td>beat</td><td>inline</td><td>expected</td><td>last</td><td>tgt</td>
+                </tr>
+                <tr>
+                  <td class="">****</td><td>company</td><td>nt</td><td>share</td><td>rev</td><td>wa</td>
+                </tr>
+                <tr class="match one">
+                  <td class="">****</td><td>amet</td><td>wa</td><td>wed</td><td>may</td><td>oct</td>
+                </tr>
+                <tr>
+                  <td>market</td><td class="">****</td><td>stock</td><td class="match two">earnings</td><td>fund</td><td>usd</td>
+                </tr>
+                <tr>
+                  <td class="">****</td><td class="match one">gt</td><td>option</td><td>price</td><td>fund</td><td>financial</td>
+                </tr>
+                <tr>
+                  <td class="">****</td><td class="match two">earnings</td><td>stock</td><td>fund</td><td>money</td><td>amet</td>
+                </tr>
+                <tr>
+                  <td>xb</td><td>answer</td><td>money</td><td>need</td><td>buy</td><td>financial</td>
+                </tr>
+                <tr>
+                  <td>xb</td><td>nt</td><td>option</td><td>fund</td><td class="match one">gt</td><td>like</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="column right">
+            <table>
+              <caption>NMF topics</caption>
+              <tbody>
+                <tr class="match three"><td>earnings</td><td>ha</td><td>release</td><td>estimate</td><td>company</td><td>stock</td></tr>
+                <tr class="match two"><td class="">******</td><td>america</td><td>post</td><td>trade</td><td>make</td><td class="">******</td></tr>
+                <tr class="match "><td>nt</td><td>like</td><td>know</td><td>going</td><td>people</td><td>think</td></tr>
+                <tr><td>company</td><td>ha</td><td>business</td><td>million</td><td>product</td><td>revenue</td></tr>
+                <tr><td>stock</td><td>click</td><td>today</td><td>dividend</td><td>live</td><td>symbol</td></tr>
+                <tr><td>option</td><td>trade</td><td>trading</td><td>spread</td><td>price</td><td>value</td></tr>
+                <tr class="match four"><td>usd</td><td>bln</td><td>exp</td><td>vs</td><td>revenue</td><td>eps</td></tr>
+                <tr><td>rev</td><td>beat</td><td>inline</td><td>expected</td><td>consensus</td><td>report</td></tr>
+                <tr><td class="">****</td><td class="">*******</td><td class="">****</td><td>going</td><td>na</td><td>buy</td></tr>
+                <tr class="match one"><td>amet</td><td>oct</td><td>wed</td><td>thurs</td><td>sept</td><td>earnings</td></tr>
+                <tr><td>market</td><td>ha</td><td>time</td><td>investor</td><td>fed</td><td>otc</td></tr>
+                <tr><td>gt</td><td>click</td><td>chart</td><td>said</td><td>share</td><td>today</td></tr>
+                <tr><td>answer</td><td>financial</td><td>need</td><td>question</td><td>house</td><td>information</td></tr>
+                <tr><td>wa</td><td>day</td><td>time</td><td>week</td><td>trade</td><td>today</td></tr>
+                <tr><td>fund</td><td>index</td><td>etf</td><td>bond</td><td>vanguard</td><td>investment</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="page pyLDAvis">
+          <div class="row top">
+            <div>pyLDAvis - mds="tsne"</div>
+            <iframe src="pages/lda_tf.html"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="page corex" onclick="matchTopics('.corex')">
+          <div class="column left">
+            <table>
+            <caption>Corex using <i>options, tendies, yolo, fomo, stock, stonk, etf, bond, trump, hillary, god, politics</i></caption>
+              <tbody>
+              <tr><td>trade</td><td>data</td><td>using</td><td>spread</td><td>based</td><td>example</td></tr>
+              <tr class="match one"><td>tendies</td><td>****</td><td>*******</td><td>****</td><td>na</td><td>gon</td></tr>
+              <tr class="match five"><td>day</td><td>sell</td><td>week</td><td>position</td><td>loss</td><td>profit</td></tr>
+              <tr><td>price</td><td>rate</td><td>higher</td><td>increase</td><td>value</td><td>likely</td></tr>
+              <tr><td>stock</td><td>penny</td><td>picking</td><td>weed</td><td>picker</td><td>delisted</td></tr>
+              <tr><td>end</td><td>th</td><td>march</td><td>news</td><td>hit</td><td>coming</td></tr>
+              <tr class="match four"><td>fund</td><td>etf</td><td>year</td><td>investment</td><td>income</td><td>retirement</td></tr>
+              <tr class="match three"><td>blackjack</td><td>yrs</td><td>risking</td><td>rep</td><td>employed</td><td>objective</td></tr>
+              <tr><td>trump</td><td>china</td><td>economy</td><td>said</td><td>country</td><td>world</td></tr>
+              <tr><td>second</td><td>deal</td><td>control</td><td>power</td><td>hand</td><td>ability</td></tr>
+              <tr><td>people</td><td>come</td><td>fact</td><td>life</td><td>street</td><td>wall</td></tr>
+              <tr class="match two"><td>company</td><td>business</td><td>investor</td><td>product</td><td>growth</td><td>million</td></tr>
+              <tr><td>cash</td><td>balance</td><td>bank</td><td>equity</td><td>loan</td><td>flow</td></tr>
+              <tr><td>real</td><td>estate</td><td>new</td><td>property</td><td>great</td><td>area</td></tr>
+              <tr><td>market</td><td>going</td><td>high</td><td>thing</td><td>long</td><td>right</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="column right">
+            <table>
+              <caption>Corex without anchors</caption>
+              <tbody>
+                <tr class="match two"><td>company</td><td>business</td><td>product</td><td>million</td><td>billion</td><td>sale</td></tr>
+                <tr><td>economy</td><td>economic</td><td>world</td><td>said</td><td>state</td><td>government</td></tr>
+                <tr class="match three"><td>blackjack</td><td>yrs</td><td>rep</td><td>risking</td><td>employed</td><td>objective</td></tr>
+                <tr><td>ha</td><td>growth</td><td>high</td><td>rate</td><td>low</td><td>higher</td></tr>
+                <tr><td>revenue</td><td>quarter</td><td>china</td><td>earnings</td><td>report</td><td>oil</td></tr>
+                <tr class="match four"><td>fund</td><td>money</td><td>account</td><td>investing</td><td>invest</td><td>investment</td></tr>
+                <tr><td>investor</td><td>work</td><td>management</td><td>job</td><td>plan</td><td>capital</td></tr>
+                <tr><td>data</td><td>result</td><td>analysis</td><td>important</td><td>line</td><td>key</td></tr>
+                <tr class="match one"><td>****</td><td>*******</td><td>****</td><td>na</td><td>gon</td><td>tendies</td></tr>
+                <tr><td>nt</td><td>like</td><td>make</td><td>wa</td><td>know</td><td>thing</td></tr>
+                <tr><td>day</td><td>week</td><td>today</td><td>dr</td><td>tl</td><td>spy</td></tr>
+                <tr class="match five"><td>option</td><td>sell</td><td>strike</td><td>spread</td><td>profit</td><td>position</td></tr>
+                <tr><td>price</td><td>value</td><td>share</td><td>cost</td><td>say</td><td>long</td></tr>
+                <tr><td>year</td><td>stock</td><td>trading</td><td>use</td><td>new</td><td>looking</td></tr>
+                <tr><td>market</td><td>people</td><td>think</td><td>good</td><td>come</td><td>look</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class=" mySlides fade">
+        <div class="page missing-link">
+          <div class="column left">
+            <embed src="pages/topic-model/graphs/graph_prune_200_sfdp_w_splines.pdf" width="1500px" height="900px" type="application/pdf" />
+          </div>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="page todo">
+          <div class="column left">
+            <img src="https://medias1.prestastore.com/838558-pbig/to-do-list-in-your-back-office.jpg" alt="Todo list" />
+          </div>
+          <div class="column right">
+            <div class="cell top">
+              <u>Take aways:</u>
+              <ul>
+                <li>The different techniques drew similar conclusions.</li>
+                <li>Seeing how much similarity there was between CorexTopic's unsupervised topic generation and that of my anchor selections gave me a lot of confidence in CorexTopic as a foundation for further exploration.</li>
+              </ul>
+            </div>
+            <div class="cell bottom">
+              <u>Next steps:</u>
+              <ul>
+                <li>Expand resolution of tool by adding time component.</li>
+                <li>Add sentiment analysis.</li>
+                <li>Correlate to stock's performance.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="page questions">
+          <div class="row top">
+            <h1>Questions?</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="page questions">
+          <div class="row top">
+            <h1>Appendix</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="page tot_corr">
+          <div class="row top">
+            <img src="images/Total Correlation.20.svg" />
+          </div>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="page corex">
+          <div class="row top">
+            <iframe src="pages/corex_anchors.40.html"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="page corex">
+          <div class="row top">
+            <iframe src="pages/corex_anchors.stock.html"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class=" mySlides fade">
+        <div class="page missing-link">
+          <div class="row top">
+            <embed src="pages/topic-model/convergence.pdf" width="800px" height="550px" type="application/pdf" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+      <span class="slideshow-dot" onclick="currentSlide(1)"></span>
+      <span class="slideshow-dot" onclick="currentSlide(2)"></span>
+      <span class="slideshow-dot" onclick="currentSlide(3)"></span>
+      <span class="slideshow-dot" onclick="currentSlide(4)"></span>
+      <span class="slideshow-dot" onclick="currentSlide(5)"></span>
+      <span class="slideshow-dot" onclick="currentSlide(6)"></span>
+      <span class="slideshow-dot" onclick="currentSlide(7)"></span>
+      <span class="slideshow-dot" onclick="currentSlide(8)"></span>
+      <span class="slideshow-dot" onclick="currentSlide(9)"></span>
+      <span class="slideshow-dot" onclick="currentSlide(10)"></span>
+      <span class="slideshow-dot" onclick="currentSlide(11)"></span>
+    </div>
+    <!-- slideshow end -->
+
+  </div>
+
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/lda_tf.js"></script>
+</body>
+
+</html>

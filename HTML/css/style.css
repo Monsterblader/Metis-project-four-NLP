@@ -1,0 +1,278 @@
+* {
+  background: transparent;
+  border: 0;
+  box-sizing: border-box;
+  /* font-size: 100%; */
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-shadow: 0px 1px 2px #111;
+  vertical-align: baseline;
+}
+
+img {
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+iframe {
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+  height: 800px;
+  width: 1000px;
+}
+
+.redact {
+  background-color: black !important;
+  color: black !important;
+}
+
+.body-background {
+  background-image: url('../images/background.png');
+  background-size: cover;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  z-index: -10;
+}
+
+.content-container {
+  background-color: #0079d3;
+  height: 100vh;
+  opacity: 95%;
+  z-index: 1;
+}
+
+.column {
+  display: inline-block;
+  width: 49%;
+}
+
+.compress {
+  transform: scaleX(0%);
+}
+
+.opener .row.top {
+  background-color: #9fa1a3;
+  border-radius: 10px;
+  margin: -28px auto 0px;
+  text-align: center;
+  width: 1200px;
+}
+
+.opener .WSJ {
+  color: #eee;
+  font-family: 'Oranienbaum', serif;
+}
+
+.opener .vs {
+  font-size: 60px;
+}
+
+.opener h3 {
+  margin: auto;
+  width: 1000px;
+}
+
+.opener img {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  z-index: -10;
+}
+
+.sources img {
+  margin-bottom: 75px;
+  width: 75%;
+}
+
+.sources .column img, .sources span {
+  margin-bottom: 25px;
+}
+
+.sources span {
+  display: block;
+  text-align: center;
+}
+
+.LSA-NMF {
+  font-size: 24px;
+}
+
+.LSA-NMF table {
+  margin: auto;
+}
+
+.LSA-NMF td {
+  /* background-color: #9fa1a3; */
+  border-radius: 3px;
+  padding: 0px 5px;
+}
+
+.LSA-NMF caption {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.pyLDAvis .row.top div {
+  margin-top: -50px;
+  padding-bottom: 25px;
+  text-align: center;
+}
+.pyLDAvis iframe {
+  height: 800px;
+  width: 1300px;
+  background: white;
+}
+
+.corex {
+  font-size: 24px;
+}
+
+.corex table {
+  margin: auto;
+}
+
+.corex td {
+  /* background-color: #9fa1a3; */
+  border-radius: 3px;
+  padding: 0px 5px;
+}
+
+.corex caption {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.corex i {
+  color: gold;
+}
+
+.todo img {
+  width: 100%;
+}
+
+.todo .right {
+  transform: translate(100px, 0);
+  vertical-align: top;
+}
+
+/* slideshow begin */
+.slideshow-container {
+  color: #fff;
+  font-size: 40px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  height: 900px;
+  margin: auto;
+  padding-top: 75px;
+  position: relative;
+  width: 1500px;
+  z-index: 10;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.slideshow-dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.slideshow-dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.hidden {
+  width: 0px;
+}
