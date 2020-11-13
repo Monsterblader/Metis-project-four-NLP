@@ -99,6 +99,11 @@ iframe {
   text-align: center;
 }
 
+.workflow h2 {
+  padding: 20px;
+  text-align: center;
+}
+
 .LSA-NMF {
   font-size: 24px;
 }
