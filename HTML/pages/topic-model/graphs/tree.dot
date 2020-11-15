@@ -1,0 +1,76 @@
+strict digraph {
+	node [shape=point];
+	n1_0 -> n2_0 [penwidth=1.73];
+	n0_2 -> n1_0 [penwidth=0.20];
+	n0_3 -> n1_0 [penwidth=1.68];
+	n0_5 -> n1_0 [penwidth=1.38];
+	n0_6 -> n1_0 [penwidth=1.81];
+	n0_7 -> n1_0 [penwidth=1.13];
+	n0_9 -> n1_0 [penwidth=1.88];
+	n0_12 -> n1_0 [penwidth=1.46];
+	n0_13 -> n1_0 [penwidth=2.18];
+	n0_14 -> n1_0 [penwidth=1.54];
+	n0_16 -> n1_0 [penwidth=1.03];
+	n0_18 -> n1_0 [penwidth=1.49];
+	n0_19 -> n1_0 [penwidth=1.14];
+	n1_1 -> n2_0 [penwidth=1.02];
+	n0_8 -> n1_1 [penwidth=0.79];
+	n0_10 -> n1_1 [penwidth=3.48];
+	n0_11 -> n1_1 [penwidth=0.77];
+	n1_2 -> n2_0 [penwidth=1.57];
+	n0_1 -> n1_2 [penwidth=1.77];
+	n0_4 -> n1_2 [penwidth=1.05];
+	n0_15 -> n1_2 [penwidth=0.70];
+	n1_3 -> n2_0 [penwidth=2.15];
+	n0_0 -> n1_3 [penwidth=2.59];
+	n0_17 -> n1_3 [penwidth=1.61];
+	n1_0 [shape=circle,margin="0,0",style=filled,fillcolor=black,fontcolor=white,height=0.60,label="0"]
+	n0_2 [label="2:blackjack yrs rep
+risking employed
+objective",shape=none,fontcolor="black"]
+	n0_3 [label="3:ha growth high rate low
+higher",shape=none,fontcolor="black"]
+	n0_5 [label="5:fund money account
+investing invest
+investment",shape=none,fontcolor="black"]
+	n0_6 [label="6:investor work
+management job plan
+capital",shape=none,fontcolor="black"]
+	n0_7 [label="7:data result analysis
+important line key",shape=none,fontcolor="black"]
+	n0_9 [label="9:nt like make wa know
+thing",shape=none,fontcolor="black"]
+	n0_12 [label="12:price value share cost
+say long",shape=none,fontcolor="black"]
+	n0_13 [label="13:year stock trading use
+new looking",shape=none,fontcolor="black"]
+	n0_14 [label="14:market people think
+good come look",shape=none,fontcolor="black"]
+	n0_16 [label="16:debt financial asset
+income house loan",shape=none,fontcolor="black"]
+	n0_18 [label="18:time month point risk
+current need",shape=none,fontcolor="black"]
+	n0_19 [label="19:going end coming soon
+ago hand",shape=none,fontcolor="black"]
+	n1_1 [shape=circle,margin="0,0",style=filled,fillcolor=black,fontcolor=white,height=0.06,label="1"]
+	n0_8 [label="8:shit fucking fuck na
+gon tendies",shape=none,fontcolor="black"]
+	n0_10 [label="10:day week today dr tl
+spy",shape=none,fontcolor="black"]
+	n0_11 [label="11:option sell strike
+spread profit position",shape=none,fontcolor="black"]
+	n1_2 [shape=circle,margin="0,0",style=filled,fillcolor=black,fontcolor=white,height=0.06,label="2"]
+	n0_1 [label="1:economy economic world
+said state government",shape=none,fontcolor="black"]
+	n0_4 [label="4:revenue quarter china
+earnings report oil",shape=none,fontcolor="black"]
+	n0_15 [label="15:post discussion daily
+thread wsb dd",shape=none,fontcolor="black"]
+	n1_3 [shape=circle,margin="0,0",style=filled,fillcolor=black,fontcolor=white,height=0.04,label="3"]
+	n0_0 [label="0:company business
+product million billion
+sale",shape=none,fontcolor="black"]
+	n0_17 [label="17:likely second run
+early huge opportunity",shape=none,fontcolor="black"]
+	n2_0 [shape=point,height=0.08]
+}
