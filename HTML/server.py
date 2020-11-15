@@ -27,10 +27,6 @@ def send_images(path):
 def send_pages(path):
     return send_from_directory('pages', path)
 
-@app.route('/media/<path:path>')
-def send_media(path):
-    return send_from_directory('media', path)
-
 @app.route('/pages/topic-model/<path:path>')
 def get_topic(path):
     return send_from_directory("pages/topic-model", path)
@@ -38,10 +34,6 @@ def get_topic(path):
 @app.route('/pages/topic-model/graphs/<path:path>')
 def get_graph(path):
     return send_from_directory('pages/topic-model/graphs', path)
-
-@app.route('/getprediction')
-def get_prediction():
-    return predict_personality(request.args.to_dict()['content'])
 
 # This just gets flask running
 app.run(port=5000, debug=True)
